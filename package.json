@@ -1,0 +1,19 @@
+{
+  "name": "no-highways",
+  "version": "1.0.0",
+  "description": "NYC (& the World) Without Highways",
+  "main": "scene.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saranrapjs/no-highways.git"
+  },
+  "author": "Jeff Sisson <jeff@bigboy.us> (http://ilikenicethings.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/saranrapjs/no-highways/issues"
+  },
+  "homepage": "https://github.com/saranrapjs/no-highways#readme"
+}
