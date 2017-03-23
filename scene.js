@@ -19,15 +19,25 @@
 		},
 		layers: {
 			roads: {
-				filter: { not: [{ kind: "rail" }, { kind_detail: "trunk" }, { kind_detail: "trunk_link" }] },
+				filter: {
+					// here we extend the base "roads" filtering rules, to capture some
+					// road types that are not explicitly targeted elsewhere
+					not: [
+						{ kind: "rail" },
+						{ kind_detail: "trunk" },
+						{ kind_detail: "trunk_link" }
+					]
+				},
 				highway: {
 					visible: false
 				},
+				// one-way directional arrows must go as well!
 				arrows: {
 					filter: {
 						none: [{kind:"highway"},{kind:"motorway"}]
 					}
 				},
+				// exit numbers
 				'highway-exit': {
 					visible: false
 				},
