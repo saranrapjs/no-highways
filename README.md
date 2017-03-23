@@ -15,7 +15,7 @@ This isn't yet packaged as an fully-fledged npm module, but you should be able t
 }
 ```
 
-And use in your code like so:
+And use in requirejs-y code like so:
 
 ```javascript
 var scene = require('no-highways');
@@ -24,10 +24,12 @@ var map = L.Mapzen.map('map', {
   zoom: 16,
   maxZoom: 20,
   tangramOptions: {
-    scene: Object.assign({}, L.Mapzen.NoHighways)
+    scene: scene
   }
 });
 ```
+
+I've also included a standalone [demo.html](https://github.com/saranrapjs/no-highways/blob/master/demo.html), which requires replacing `replace-this-with-your-api-key` with a [free Mapzen API key](https://mapzen.com/developers/sign_in).
 
 ### Some notes on tagging
 

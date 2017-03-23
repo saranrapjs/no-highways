@@ -10,7 +10,6 @@
 	return {
 		import: 'https://mapzen.com/carto/walkabout-style/4/walkabout-style.zip',
 		global: {
-			sdk_mapzen_api_key: L.Mapzen.apiKey,
 			sdk_path_overlay: false,
 			sdk_bike_overlay: true,
 			sdk_road_shields: false,
