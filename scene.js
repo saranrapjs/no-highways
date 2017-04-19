@@ -41,8 +41,18 @@
 					visible: false
 				},
 				major_road: {
+					filter: {
+						kind: "major_road",
+						not: function() {
+							return feature.kind_detail === "primary" && feature.shield_text;
+						},
+					},
 					trunk_primary: {
-						filter: { kind_detail: ["primary"] }
+						// this leaves *most* crossable primary roads, trying to exclude
+						// roads with shield text aka highway-like roads?
+						filter: function() {
+							return feature.kind_detail === "primary" && !feature.shield_text;
+						}
 					}
 				}
 			},
