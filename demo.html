@@ -2,11 +2,9 @@
 <html>
 <head>
 	<title>No Highways NYC</title>
-	<!-- style sheet for mapzen.js -->
-	<link rel="stylesheet" href="https://mapzen.com/js/mapzen.css">
-
-	<!-- latest minified version of mapzen.js -->
-	<script src="https://mapzen.com/js/mapzen.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.1/leaflet.css" />
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.1/leaflet.js"></script>
+	<script src="https://www.nextzen.org/tangram/0.14/tangram.min.js"></script>
 	<style type="text/css">
 	body, html {
 		margin:0;
@@ -23,15 +21,14 @@
 <div id="map"></div>
 <script src="scene.js"></script>
 <script type="text/javascript">
-L.Mapzen.apiKey = 'replace-this-with-your-api-key';
-var map = L.Mapzen.map('map', {
+var map = L.map('map', {
   center: [40.679625, -74.003938],
   zoom: 16,
   maxZoom: 20,
-  tangramOptions: {
-    scene: L.Mapzen.NoHighways
-  }
 });
+var tangramLayer = Tangram.leafletLayer({
+	scene: L.NoHighways('replace-this-with-your-nextzen-api-key'),
+}).addTo(map)
 </script>
 </body>
 </html>

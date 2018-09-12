@@ -1,6 +1,6 @@
 # NYC (& the World) Without Highways
 
-Ths is the code counterpart to the [map and webpage of the same name](http://bigboy.us/other/no-highways/), which allows anyone to easily create a highway-less map with [mapzen.js](https://github.com/mapzen/mapzen.js) and [tangram](https://github.com/tangrams/tangram).
+Ths is the code counterpart to the [map and webpage of the same name](http://bigboy.us/other/no-highways/), which allows anyone to easily create a highway-less map with [tangram](https://github.com/tangrams/tangram).
 
 ### Usage
 
@@ -19,17 +19,17 @@ And use in requirejs-y code like so:
 
 ```javascript
 var scene = require('no-highways');
-var map = L.Mapzen.map('map', {
+var map = L.map('map', {
   center: [40.679625, -74.003938],
   zoom: 16,
   maxZoom: 20,
-  tangramOptions: {
-    scene: scene
-  }
 });
+var tangramLayer = Tangram.leafletLayer({
+  scene: L.NoHighways('replace-this-with-your-nextzen-api-key'),
+}).addTo(map)
 ```
 
-I've also included a standalone [demo.html](https://github.com/saranrapjs/no-highways/blob/master/demo.html), which requires replacing `replace-this-with-your-api-key` with a [free Mapzen API key](https://mapzen.com/developers/sign_in).
+I've also included a standalone [demo.html](https://github.com/saranrapjs/no-highways/blob/master/demo.html), which requires replacing `replace-this-with-your-nextzen-api-key` with a [free Nextzen API key](https://developers.nextzen.org/).
 
 ### Some notes on tagging
 
